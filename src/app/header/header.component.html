@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a routerLink="/" class="navbar-brand">
+                <img src="assets/images/logo-app.png" alt="logo image">
+            </a>
+            <button id="nav-btn" class="navbar-toggler" type="button" (click)="onToggleMenu()" data-toggle="collapse">
+                <img src="assets/images/toggler.png" alt="navigation bar toggler image">
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" [ngClass]="{'toggle-menu-style' : toggleMenu === true}" id="navbar-responsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a routerLink="/start" class="nav-link" (click)="closeMenu()">New Book</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/library" class="nav-link" (click)="closeMenu()">Library</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

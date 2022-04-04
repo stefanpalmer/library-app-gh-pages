@@ -1,0 +1,15 @@
+<h3>{{book.title}}</h3>
+<h5><span>Editor: </span>{{book.author}}</h5>
+<h5><span>Year: </span>{{book.year}}</h5>
+<h5><span>Publisher: </span>{{book.publisher}}</h5>
+<h5><span>Pages: </span>{{book.pages}}</h5>
+<h5 *ngIf="book.stories.length == 0 && book.series"><span>Collection: </span>{{book.series}} (Book {{book.seriesnum}})</h5>
+<h5><span>ISBN: </span>{{book.isbn.substring(0,3)}}-{{book.isbn.substring(3,13)}}</h5>
+<h5><span>Review: </span></h5><h6>{{book.review}}</h6>
+<h5 *ngIf="book.stories.length > 0"><span>Consists of </span>{{book.stories.length}}<span> stories:</span></h5>
+<h6 *ngIf="book.stories.length > 0">
+    <ul *ngFor="let story of book.stories">
+        <li>"{{story.title}}" ({{story.author}})</li>
+    </ul>
+</h6>
+<a routerLink="../../" id="back-link">Back</a>

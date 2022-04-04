@@ -1,0 +1,27 @@
+h3 {
+    color: #942F2F;
+}
+
+h5, h6 {
+    color: #942F2F;
+    letter-spacing: 0.15rem;
+}
+
+h5 {
+    margin-top: 1.3rem;
+}
+
+h5 span {
+    color: #536271;
+    letter-spacing: 0rem;
+}
+
+h6 {
+    line-height: 1.9rem;
+}
+
+#back-link {
+    color: #942F2F;
+    line-height: 8rem;
+    font-size: 1.2rem;
+}

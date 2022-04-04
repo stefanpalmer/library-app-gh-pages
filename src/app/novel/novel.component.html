@@ -1,0 +1,68 @@
+<form [formGroup]="novelForm" (ngSubmit)="onSubmit()">
+    <h2>Novel Entry</h2>
+    <div class="row">
+        <div class="col-sm-5">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" class="form-control" formControlName="title">
+            <div *ngIf="novelForm.get('title')?.touched && novelForm.get('title')?.invalid" 
+            class="alert alert-danger">Title is required.</div>
+        </div>
+        <div class="col-sm-5">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" id="author" class="form-control" formControlName="author">
+            <div *ngIf="novelForm.get('author')?.touched && novelForm.get('author')?.invalid" 
+            class="alert alert-danger">Author is required.</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+            <label for="publisher" class="form-label">Publisher</label>
+            <input type="text" id="publisher" class="form-control" formControlName="publisher">
+        </div>
+        <div class="col-sm-2">
+            <label for="year" class="form-label">Year</label>
+            <input type="number" id="year" class="form-control" formControlName="year">
+            <div *ngIf="novelForm.get('year')?.touched && novelForm.get('year')?.invalid" 
+            class="alert alert-danger">Cannot be later than current year.</div>
+        </div>
+        <div class="col-sm-2">
+            <label for="pages" class="form-label">Pages</label>
+            <input type="number" id="pages" class="form-control" formControlName="pages">
+            <div *ngIf="novelForm.get('pages')?.touched && novelForm.get('pages')?.invalid" 
+            class="alert alert-danger">Must be a positive number.</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+            <label for="series" class="form-label">Series</label>
+            <input type="text" id="series" class="form-control" formControlName="series">
+        </div>
+        <div class="col-sm-2">
+            <label for="seriesnum" class="form-label">Series No.</label>
+            <input type="number" id="seriesnum" class="form-control" formControlName="seriesnum">
+        </div>
+        <div class="col-sm-2">
+            <label for="isbn" class="form-label">ISBN</label>
+            <input type="text" id="isbn" class="form-control" formControlName="isbn">
+            <div *ngIf="novelForm.get('isbn')?.touched && novelForm.get('isbn')?.invalid" 
+            class="alert alert-danger">Must be a 13-digit number.</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-11">
+            <label for="review" class="form-label">Review</label>
+            <textarea type="text" id="review" class="form-control" name="review" formControlName="review" 
+            cols="100" rows="3"></textarea>
+        </div>
+    </div>
+    <div id="novel-buttons">
+        <div>
+            <button *ngIf="!editMode" class="btn btn-submit" type="submit">Add</button>
+            <button *ngIf="editMode" class="btn btn-submit" type="submit">Update</button>
+        </div>
+        <div>
+            <button *ngIf="!editMode" (click)="onCancelNew()" class="btn btn-clear">Cancel</button>
+            <button *ngIf="editMode" (click)="onCancelEdit()" class="btn btn-clear">Cancel</button>
+        </div>
+    </div>
+</form>

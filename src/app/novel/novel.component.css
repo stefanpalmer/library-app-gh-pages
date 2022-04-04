@@ -1,0 +1,54 @@
+form {
+    margin-bottom: 1.85rem;
+}
+
+form h2 {
+    margin-bottom: 1.25rem;
+    color: #942F2F;
+}
+
+form label {
+    color: #942F2F;
+}
+
+.btn {
+    margin-top: 1.85rem;
+    background-color: #942F2F;
+    border-color: #942F2F;
+    color: #FFF9EC;
+}
+
+.btn:active {
+    border-color: #FFDCCC;
+    box-shadow: 0 0 0 0.1rem #ffad88;
+}
+
+.btn:focus {
+    border-color: #FFDCCC;
+    box-shadow: 0 0 0 0.1rem #ffad88;
+}
+
+#novel-buttons {
+    display: flex;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+    background: #fff4df;
+    border-color: #c9c4c4;
+    color: #738290;
+}
+
+.form-control:focus {
+    border-color: #FFDCCC;
+    box-shadow: 0 0 0 0.1rem #ffad88;
+}
+
+.btn-submit {
+    position: relative;
+}
+
+.btn-clear {
+    position: relative;
+    left: 20%;
+}
